@@ -79,10 +79,16 @@ GestaoAdvogados/
 1. **Clone o repositorio:**
    ```bash
    git clone https://github.com/LeonardoMarins/teste-cgv.git
+Abra a solucao GestaoAdvogados.sln no Visual Studio
 
-Defina GestaoAdvogados como projeto de inicializacao (clique direito -> Set as Startup Project)
-Pressione F5 ou clique em IIS Express para iniciar
-Acesse no navegador:
+Defina o projeto de inicializacao: clique direito em GestaoAdvogados > Set as Startup Project
+
+Limpe e recompile a solucao:
+
+Menu Build > Clean Solution
+Menu Build > Rebuild Solution
+Execute: pressione F5 ou clique em IIS Express
 
 A aplicacao abrira automaticamente em http://localhost:{porta}/Lawyer
+
 Nota: os dados sao armazenados em memoria e serao perdidos ao reiniciar a aplicacao. Nao e necessario configurar banco de dados.
