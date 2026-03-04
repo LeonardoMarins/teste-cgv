@@ -2,8 +2,8 @@ using System.Linq;
 using System.Web.Mvc;
 using Domain.Entity;
 using GestaoAdvogados.ViewModels;
-using Repository.Implements.LawyerRepository;
-using Repository.Interface.ILawerRepository;
+using Repository.Implements;
+using Repository.Interface;
 
 namespace GestaoAdvogados.Controllers
 {

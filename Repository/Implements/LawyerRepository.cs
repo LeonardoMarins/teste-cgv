@@ -1,8 +1,8 @@
 ﻿using Domain.Entity;
-using Repository.Interface.ILawerRepository;
+using Repository.Interface;
 using System.Linq;
 
-namespace Repository.Implements.LawyerRepository
+namespace Repository.Implements
 {
     public class LawyerRepository : ILawyerRepository
     {
@@ -14,34 +14,34 @@ namespace Repository.Implements.LawyerRepository
 
         public IQueryable<Lawyer> GetAll()
         {
-           return _context.Advogados;
+           return _context.Lawyers;
         }
 
-        public void Add(Lawyer advogado)
+        public void Add(Lawyer lawyer)
         {
-            advogado.Id = _context.GerarId();
-            _context.Add(advogado);
+            lawyer.Id = _context.GenerateId();
+            _context.Add(lawyer);
         }
 
         public Lawyer Find(int id)
         {
-            return _context.Advogados.FirstOrDefault(a => a.Id == id);
+            return _context.Lawyers.FirstOrDefault(a => a.Id == id);
         }
 
-        public void Update(Lawyer advogado)
+        public void Update(Lawyer lawyer)
         {
-            var advogadoExistente = Find(advogado.Id);
+            var advogadoExistente = Find(lawyer.Id);
             if (advogadoExistente != null)
             {
-                advogadoExistente.Name = advogado.Name;
-                advogadoExistente.Seniority = advogado.Seniority;
-                advogadoExistente.Address = advogado.Address;
+                advogadoExistente.Name = lawyer.Name;
+                advogadoExistente.Seniority = lawyer.Seniority;
+                advogadoExistente.Address = lawyer.Address;
             }
         }
 
-        public void Remove(Lawyer advogado)
+        public void Remove(Lawyer lawyer)
         {
-            _context.Remove(advogado);
+            _context.Remove(lawyer);
         }
 
         public void Clear()

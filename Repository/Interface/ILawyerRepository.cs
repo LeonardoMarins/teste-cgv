@@ -1,7 +1,7 @@
 ﻿using Domain.Entity;
 using System.Linq;
 
-namespace Repository.Interface.ILawerRepository
+namespace Repository.Interface
 {
     public interface ILawyerRepository
     {

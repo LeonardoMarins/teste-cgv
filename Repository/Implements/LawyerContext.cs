@@ -9,13 +9,13 @@ namespace Repository.Implements
         private static LawyerContext _instance;
         private static readonly object _lock = new object();
 
-        private readonly List<Lawyer> _advogados;
-        private int _proximoId;
+        private readonly List<Lawyer> _lawyer;
+        private int _nextId;
 
         private LawyerContext()
         {
-            _advogados = new List<Lawyer>();
-            _proximoId = 1;
+            _lawyer = new List<Lawyer>();
+            _nextId = 1;
         }
 
         public static LawyerContext Instance
@@ -34,32 +34,32 @@ namespace Repository.Implements
             }
         }
 
-        public IQueryable<Lawyer> Advogados => _advogados.AsQueryable();
+        public IQueryable<Lawyer> Lawyers => _lawyer.AsQueryable();
 
-        public int GerarId()
+        public int GenerateId()
         {
-            return _proximoId++;
+            return _nextId++;
         }
 
         public void Add(Lawyer advogado)
         {
-            _advogados.Add(advogado);
+            _lawyer.Add(advogado);
         }
 
         public void Remove(Lawyer advogado)
         {
-            _advogados.Remove(advogado);
+            _lawyer.Remove(advogado);
         }
 
         public Lawyer Find(int id)
         {
-            return _advogados.FirstOrDefault(a => a.Id == id);
+            return _lawyer.FirstOrDefault(a => a.Id == id);
         }
 
         public void Clear()
         {
-            _advogados.Clear();
-            _proximoId = 1;
+            _lawyer.Clear();
+            _nextId = 1;
         }
     }
 }
