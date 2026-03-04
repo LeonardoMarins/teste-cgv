@@ -44,10 +44,6 @@ namespace Repository.Implements.LawyerRepository
             _context.Remove(advogado);
         }
 
-        public void SaveChanges()
-        {
-        }
-
         public void Clear()
         {
             _context.Clear();

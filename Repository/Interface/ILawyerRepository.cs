@@ -15,8 +15,6 @@ namespace Repository.Interface.ILawerRepository
 
         void Remove(Lawyer advogado);
 
-        void SaveChanges();
-
         void Clear();
     }
 }

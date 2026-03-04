@@ -45,7 +45,6 @@ namespace GestaoAdvogados.Controllers
             if (ModelState.IsValid)
             {
                 _repository.Add(ToEntity(viewModel));
-                _repository.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(viewModel);
@@ -65,7 +64,6 @@ namespace GestaoAdvogados.Controllers
             if (ModelState.IsValid)
             {
                 _repository.Update(ToEntity(viewModel));
-                _repository.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(viewModel);
@@ -86,7 +84,6 @@ namespace GestaoAdvogados.Controllers
             if (lawyer != null)
             {
                 _repository.Remove(lawyer);
-                _repository.SaveChanges();
             }
             return RedirectToAction("Index");
         }
