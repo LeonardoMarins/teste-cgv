@@ -1,0 +1,53 @@
+﻿@model GestaoAdvogados.ViewModels.LawyerViewModel
+
+@{
+    ViewBag.Title = "Excluir Advogado";
+}
+
+<h2>Excluir Advogado</h2>
+
+<h3>Tem certeza que deseja excluir este advogado?</h3>
+<div>
+    <h4>Informações do Advogado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd>@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Seniority)</dt>
+        <dd>@Html.DisplayFor(model => model.Seniority)</dd>
+    </dl>
+
+    <h4>Endereço</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Address.ZipCode)</dt>
+        <dd>@Html.DisplayFor(model => model.Address.ZipCode)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Address.Street)</dt>
+        <dd>@Html.DisplayFor(model => model.Address.Street)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Address.Number)</dt>
+        <dd>@Html.DisplayFor(model => model.Address.Number)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Address.Complement)</dt>
+        <dd>@Html.DisplayFor(model => model.Address.Complement)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Address.Neighborhood)</dt>
+        <dd>@Html.DisplayFor(model => model.Address.Neighborhood)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Address.State)</dt>
+        <dd>@Model.Address.State.ToString()</dd>
+    </dl>
+
+    @using (Html.BeginForm("Delete", "Lawyer", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+            @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

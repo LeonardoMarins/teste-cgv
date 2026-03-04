@@ -1,0 +1,24 @@
+﻿@{ ViewBag.Title = "Home"; }
+
+<div class="jumbotron">
+    <h1>Gestão de Advogados</h1>
+    <p class="lead">Sistema de gerenciamento de advogados desenvolvido em ASP.NET MVC.</p>
+    <p>@Html.ActionLink("Gerenciar Advogados", "Index", "Lawyer", null, new { @class = "btn btn-primary btn-lg" })</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Cadastro</h2>
+        <p>
+            Cadastre advogados com informações completas incluindo nome, senioridade e endereço completo.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Validações</h2>
+        <p>Todos os campos possuem validações client-side e server-side para garantir a integridade dos dados.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Máscaras</h2>
+        <p>Campos de CEP e Número possuem máscaras automáticas para facilitar o preenchimento.</p>
+    </div>
+</div>
