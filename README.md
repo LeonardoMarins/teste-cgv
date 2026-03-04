@@ -33,6 +33,7 @@ Sistema de cadastro de advogados desenvolvido com **ASP.NET MVC 5** e **.NET Fra
 
 ## Estrutura do projeto
 
+```
 GestaoAdvogados/
 +-- Domain/                          # Camada de dominio
 |   +-- Entity/
@@ -49,20 +50,19 @@ GestaoAdvogados/
 |       +-- LawyerRepository.cs      # Implementacao do repositorio
 |
 +-- GestaoAdvogados/                 # Projeto web (MVC)
-+-- Controllers/
-|   +-- LawyerController.cs      # Controller com mapeamento ViewModel <-> Entity
-+-- ViewModels/
-|   +-- LawyerViewModel.cs       # ViewModel do advogado
-|   +-- AddressViewModel.cs      # ViewModel do endereco
-+-- Views/
-+-- Lawyer/
-+-- Index.cshtml         # Listagem
-+-- Create.cshtml        # Cadastro
-+-- Edit.cshtml          # Edicao
-+-- Details.cshtml       # Detalhes
-+-- Delete.cshtml        # Confirmacao de exclusao
-
-
+    +-- Controllers/
+    |   +-- LawyerController.cs      # Controller com mapeamento ViewModel <-> Entity
+    +-- ViewModels/
+    |   +-- LawyerViewModel.cs       # ViewModel do advogado
+    |   +-- AddressViewModel.cs      # ViewModel do endereco
+    +-- Views/
+        +-- Lawyer/
+            +-- Index.cshtml         # Listagem
+            +-- Create.cshtml        # Cadastro
+            +-- Edit.cshtml          # Edicao
+            +-- Details.cshtml       # Detalhes
+            +-- Delete.cshtml        # Confirmacao de exclusao
+```
 
 ---
 
