@@ -19,7 +19,7 @@ namespace GestaoAdvogados.ViewModels
 
         [Required(ErrorMessage = "O estado é obrigatório")]
         [Display(Name = "Estado")]
-        public State State { get; set; }
+        public State State { get; set; } = State.RJ;
 
         [Required(ErrorMessage = "O CEP é obrigatório")]
         [RegularExpression(@"^\d{5}-\d{3}$", ErrorMessage = "CEP deve estar no formato 00000-000")]

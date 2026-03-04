@@ -17,9 +17,9 @@ namespace GestaoAdvogados.ViewModels
 
         [Required(ErrorMessage = "A senioridade é obrigatória")]
         [Display(Name = "Senioridade")]
-        public Seniority Seniority { get; set; }
+        public Seniority Seniority { get; set; } = Seniority.MidLevel;
 
         [Required(ErrorMessage = "O endereço é obrigatório")]
-        public AddressViewModel Address { get; set; }
+        public AddressViewModel Address { get; set; } = new AddressViewModel();
     }
 }
